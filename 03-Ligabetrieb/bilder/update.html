@@ -1,0 +1,23 @@
+<html>
+<BODY >
+<body background="Bilder/hintergrund(hellblau).jpg" bgcolor="#FFFFFF" text="##000066"
+
+<Center>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+//URL: http://www.billardunionmgkempen.de/--eMail: verein@billardunionmgkempen.de
+
+var Datum = new Date(document.lastModified);
+var Monate = new
+
+Array("Januar","Februar","März","April","Mai","Juni","Juli","Aug.","Sept.","Okt,","Nov.","Dez.");
+if (Datum.getYear()<=1900)
+document.write("Diese Seiten wurden das letzte mal am " + Datum.getDate() + ". " + Monate[Datum.getMonth()] +" "+(Datum.getYear()+1900)+" aktualisiert.");
+else
+document.write("Diese Seite wurde das letzte mal am <b>" + Datum.getDate() + ". " + Monate[Datum.getMonth()] +" "+Datum.getYear()+" </b>aktualisiert.");
+ //-->
+</SCRIPT>
+</CENTER>
+</BODY>
+</HTML>

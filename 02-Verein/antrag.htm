@@ -1,0 +1,378 @@
+<style type="text/css">
+<!--
+.mini {
+ font-size: 9px;
+}
+-->
+</style>
+
+
+<script language="JavaScript">
+<!--
+
+// function chkmeinform() testet die Eingaben
+
+
+function chkmeinform()
+{
+// test feld name
+     if(document.vorlageform.nachname.value == "")
+     {
+      alert("Bitte den Namen eintragen!");
+      document.vorlageform.nachname.focus();
+      return false;
+     }
+
+// test feld vorname
+     if(document.vorlageform.vorname.value == "")
+     {
+      alert("Bitte den Vornamen eintragen!");
+      document.vorlageform.vorname.focus();
+      return false;
+     }
+
+// test feld geb
+     if(document.vorlageform.gebtag.value < 1 || document.vorlageform.gebtag.value > 31)
+     {
+      alert("Der eingetragene Geburtstag ist nicht gültig!");
+      document.vorlageform.gebtag.focus();
+      return false;
+     }
+     chkZ = 0;
+     for(i=0;i<document.vorlageform.gebtag.value.length;++i)
+     if(document.vorlageform.gebtag.value.charAt(i) < "0" || document.vorlageform.gebtag.value.charAt(i) > "9")
+       chkZ = -1;
+     if(chkZ == -1)
+     {
+      alert("Der eingetragene Geburtstag ist nicht gültig!");
+      document.vorlageform.gebtag.focus();
+      return false;
+     }
+     if(document.vorlageform.gebmon.value < 1 || document.vorlageform.gebmon.value > 12)
+     {
+      alert("Der eingetragene Geburtsmonat ist nicht gültig!");
+      document.vorlageform.gebmon.focus();
+      return false;
+     }
+     chkZ = 0;
+     for(i=0;i<document.vorlageform.gebmon.value.length;++i)
+     if(document.vorlageform.gebmon.value.charAt(i) < "0" ||
+document.vorlageform.gebmon.value.charAt(i) > "9")
+       chkZ = -1;
+     if(chkZ == -1)
+     {
+      alert("Der eingetragene Geburtsmonat ist nicht gültig!");
+      document.vorlageform.gebmon.focus();
+      return false;
+     }
+     if(document.vorlageform.gebjahr.value < 1900 ||
+document.vorlageform.gebjahr.value > 2001)
+     {
+      alert("Das eingetragene Geburtsjahr ist nicht gültig!");
+      document.vorlageform.gebjahr.focus();
+      return false;
+     }
+     chkZ = 0;
+     for(i=0;i<document.vorlageform.gebjahr.value.length;++i)
+     if(document.vorlageform.gebjahr.value.charAt(i) < "0" ||
+document.vorlageform.gebjahr.value.charAt(i) > "9")
+       chkZ = -1;
+     if(chkZ == -1)
+     {
+      alert("Das eingetragene Geburtsjahr ist nicht gültig!");
+      document.vorlageform.gebjahr.focus();
+      return false;
+     }
+     // test feld stasse
+     if(document.vorlageform.strasse.value == "")
+     {
+      alert("Bitte Ihre Straße und Hausnummer eintragen!");
+      document.vorlageform.strasse.focus();
+      return false;
+     }
+
+// test feld plz
+     if(document.vorlageform.plz.value == "")
+     {
+      alert("Bitte Ihre Postleitzahl eintragen!");
+      document.vorlageform.plz.focus();
+      return false;
+     }
+     chkZ = 0;
+     for(i=0;i<document.vorlageform.plz.value.length;++i)
+     if(document.vorlageform.plz.value.charAt(i) < "0" ||
+document.vorlageform.plz.value.charAt(i) > "9")
+       chkZ = -1;
+     if(chkZ == -1)
+     {
+      alert("Die Postleitzahl ist keine Zahl!");
+      document.vorlageform.plz.focus();
+      return false;
+     }
+
+// test feld ort
+     if(document.vorlageform.ort.value == "")
+     {
+      alert("Bitte Ihren Wohnort eintragen!");
+      document.vorlageform.ort.focus();
+      return false;
+     }
+
+
+// test feld email
+     if(document.vorlageform.email.value == "")
+     {
+      alert("Bitte die eMailadresse eintragen!");
+      document.vorlageform.email.focus();
+      return false;
+     }
+
+     if(document.vorlageform.email.value.indexOf('@') == -1)
+     {
+      alert("Ihre Eingabe für die Email-Adresse ist ungültig!");
+      document.vorlageform.email.focus();
+      return false;
+     }
+
+// test feld Mitgliedschaft
+     if (document.vorlageform.art.value == "NEIN")
+     {
+     alert ("\n Sie haben keine Mitgliedschaft ausgewählt \n\nOhne Auswahl ist keine Bearbeitung möglich")
+     document.vorlageform.art.focus();
+     return false;
+     }
+
+
+
+// test feld checkbox
+     if(document.vorlageform.agree.checked == false)
+     {
+      alert("Bitte die Satzung lesen!");
+      document.vorlageform.agree.focus();
+      return false;
+     }
+
+// test feld Zustimmung
+     if (document.vorlageform.terms.value == "NEIN")
+     {
+     alert ("\n Sie haben leider nicht zugestimmt \n\nOhne Ihre Zustimmung ist keine Bearbeitung möglich")
+     document.vorlageform.terms.focus();
+     return false;
+     }
+
+
+// ende aller tests
+
+return true;
+}
+
+//-->
+</script>
+
+</head>
+
+<body bgcolor="#000000" background="bilder/hintergrund(hellblau).jpg">
+
+<!-- hier beginnt das Formular -->
+
+<!-- hinter action=mailto: tragen Sie Ihre email-adresse ein -->
+
+<form name="vorlageform" ACTION="mailto:hans.kirchhoff@gmx.de"
+method="post" enctype="text/plain" onSubmit="return chkmeinform();">
+
+<table border="0" cellspacing="7" cellpadding="0" height="897" width="728">
+<tr><td colspan="3" height="194" width="714">
+<h2><font color="#000066">Antrag einer Mitgliedschaft</font></h2>
+<p><b><font size="2" color="#000066">Werden Sie Mitglied bei der Billardunion 
+M.Gladbach-Kempen 1969 e.V.</font></b></p>
+<p>
+<font color="#000066" size="2">Hier können Sie Ihre Vereinszugehörigkeit online beantragen.<br>
+Alternativ können Sie auch ein Antragsformular ausdrucken und an unsere Adresse 
+senden, bzw. persönlich abgeben. <br>
+Nach Versand dieses Formulars, werden wir uns schnellst möglichst bei Ihnen 
+melden.</font><font color="#000066"><br><br>
+<a href="downloads_Verein/Aufnahmeantrag.doc">
+<img src="pfeil-klein.gif" width="10" height="9" border="0" alt=""></a></font><b><a href="downloads_Verein/Aufnahmeantrag.pdf"><font color="#000066">Antragsformular ausdrucken</font></a></b><font color="#000066"><br>&nbsp;</font></p>
+  </td></tr>
+<tr><td class="mini" colspan="3" height="31" width="714"><font color="#000066"><br>
+  </font>
+  
+<a href="downloads_Verein/Aufnahmeantrag.doc">
+  <font color="#000066">
+  <a href="downloads_Verein/Fragebogen%20zum%20Spieler.pdf">
+<img src="pfeil-klein.gif" width="10" height="9" border="0" alt=""></a></font></a><font size="3" color="#000066"></font></font><b><font size="3" color="#000066"><a href="downloads_Verein/Fragebogen%20zum%20Spieler.pdf"><font color="#000066">Fragebogen 
+  zum Spieler(in) ausdrucken</font></a></font></b><font color="#000066"><br>&nbsp;</font></p>
+  </td></tr>
+<tr><td class="mini" colspan="3" height="31" width="714"><font color="#000066"><br>
+  </font>  
+  <b><font size="2" color="#000066">Bitte achten Sie beim Ausfüllen auf die * markierten 
+  Pflichtfelder.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Ohne diese Angaben kann Ihr Antrag nicht bearbeitet werden.</font></b><font color="#000066"><br>
+  </font></td></tr>
+
+<tr>
+<td align="right" height="22" width="243"><font color="#000066" size="2"><b>Name:</b></font></td>
+<td height="22" width="13"> <font color="#000066"> <b>* </b> </font> </td>
+<td height="22" width="444"><font color="#000066"><INPUT NAME="nachname" size="30" MAXLENGTH=30 VALUE=""></font></td>
+</tr>
+
+
+<tr>
+<td align="right" height="23" width="243"><font color="#000066" size="2"><b>Vorname:</b></font></td>
+<td height="23" width="13"> <font color="#000066"> <b>* </b> </font> </td>
+<td height="23" width="444"><font color="#000066"><INPUT NAME="vorname" size="30" MAXLENGTH=30 VALUE=""></font></td>
+</tr>
+
+<tr>
+<td align="right" height="23" width="243"> <font color="#000066" size="2"> <b>Geboren:</b></font></td>
+<td height="23" width="13"> <font color="#000066"> <b>* </b> </font> </td>
+<td height="23" width="444">
+<font color="#000066">
+<INPUT NAME="gebtag" size="2" MAXLENGTH=2 VALUE="">
+. </font>
+<font color="#000066">
+<INPUT NAME="gebmon" size="2" MAXLENGTH=2 VALUE="">
+.
+<INPUT NAME="gebjahr" size="4" MAXLENGTH=4 VALUE="">
+&nbsp; ( TT. MM. JJJJ. ) </font>
+</td>
+</tr>
+
+<tr>
+<td align="right" height="22" width="243"><font color="#000066" size="2"><b>Straße&nbsp;und&nbsp;Nr.:</b></font></td>
+<td height="22" width="13"> <font color="#000066"> <b>* </b> </font> </td>
+<td height="22" width="444"><font color="#000066"><INPUT NAME="strasse" size="30" MAXLENGTH=50 VALUE=""></font></td>
+</tr>
+
+<tr>
+<td align="right" height="22" width="243"><font color="#000066" size="2"><b>Postleitzahl:</b></font></td>
+<td height="22" width="13"> <font color="#000066"> <b>* </b> </font> </td>
+<td height="22" width="444"><font color="#000066"><INPUT NAME="plz" size="5" MAXLENGTH=8 VALUE=""></font></td>
+</tr>
+
+<tr>
+<td align="right" height="22" width="243"><font color="#000066" size="2"><b>Wohnort:</b></font></td>
+<td height="22" width="13"> <font color="#000066"> <b>* </b> </font> </td>
+<td height="22" width="444"><font color="#000066"><INPUT NAME="ort" size="30" MAXLENGTH=30 VALUE=""></font></td>
+</tr>
+
+
+<tr>
+<td align="right" height="22" width="243"><font color="#000066" size="2"><b>Telefon:</b></font></td>
+<td height="22" width="13">&nbsp;</td>
+<td height="22" width="444"><font color="#000066"><INPUT NAME="telefon" size="30" MAXLENGTH=30 VALUE=""></font></td>
+</tr>
+
+<tr>
+<td align="right" height="22" width="243"><font color="#000066" size="2"><b>Fax:</b></font></td>
+<td height="22" width="13">&nbsp;</td>
+<td height="22" width="444"><font color="#000066"><INPUT NAME="fax" size="30" MAXLENGTH=30 VALUE=""></font></td>
+</tr>
+
+<tr>
+<td align="right" height="22" width="243"><font color="#000066" size="2"><b>E-Mail:</b></font></td>
+<td height="22" width="13"> <font color="#000066"> <b>* </b> </font> </td>
+<td height="22" width="444"><font color="#000066"><INPUT NAME="email" size="30" MAXLENGTH=100 VALUE=""></font></td>
+</tr>
+
+<tr>
+<td valign="top" align="right" height="95" width="243">
+<font color="#000066" size="2"><b>Monatsbeitrag:</b></font><p>
+<font color="#000066" size="2"><br>&nbsp;</font></td>
+<td height="95" width="13">&nbsp;</td>
+<td height="95" width="444"><font color="#000066" size="2">50,- € 
+Familienbeitrag<br>
+35,- € Aktiv<br>
+25,- € Passiv<br>
+25,- € Jugend, Rentner, Arbeitssuchende (nicht ARGE-Empfänger)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Stand: </b>01. August 2010</font></td>
+</tr>
+
+<tr>
+<td align="right" height="23" width="243"> <font color="#000066" size="2"> <b>Mitgliedschaft:</b></font></td>
+<td height="23" width="13"> <font color="#000066"> <b>* </b> </font> </td>
+<td width="444" height="23">
+<font color="#000066"><!--webbot bot="Validation" b-value-required="TRUE" --><select name="art">
+<option value="NEIN" selected>bitte wählen</option>
+<option>Familienbeitrag</option>
+<option value="Aktiv">Aktiv
+<option value="Inaktiv">Passiv
+<option value="Jugend">Jugend</option>
+<option value="Aktiv">Rentner Arbeitssuchende (nicht ARGE)</option>
+
+</select> </font>
+</td>
+</tr>
+
+<tr>
+<td valign="top" align="right" height="19" width="243">&nbsp;</td>
+<td height="19" width="13">&nbsp;</td>
+<td height="19" width="444">&nbsp;</td>
+</tr>
+
+
+
+
+<tr>
+<td align="right" height="68" width="243"><font color="#000066" size="2"><b>Textmitteilung:</b></font></td>
+<td height="68" width="13">&nbsp;</td>
+<td height="68" width="444"><font color="#000066"><textarea name="Text" rows="4" cols="30"
+wrap="virtual"></textarea><br></font></td>
+</tr>
+
+<tr>
+<td align="right" width="243" align="right" height="21">&nbsp;</td>
+<td height="21" width="13"> <font color="#000066">* </font> </td>
+<td height="21" width="444"><font color="#000066">
+<a href="downloads_Verein/Satzung%20Billard-Union%20MG-K1969%2003%20e.V..pdf"><input type="checkbox" value="0" name="agree"></a></font><b><font size="2" color="#000066">Die
+</font>
+</b>
+<font size="2"><u>
+<b>
+<font color="#0000FF">
+<a href="downloads_Verein/Satzung%20BU%20MG-Kempen.pdf">
+<font color="#000066">Satzung</font></a></font><font color="#000066"> </font>
+</b></u></font><font color="#000066"><b><font size="2">ist mir bekannt</font></b></font></td>
+</tr>
+
+<tr>
+<td align="right" height="22" width="243"><font color="#000066" size="2"><b>Zustimmung:</b></font></td>
+<td height="22" width="13"> <font color="#000066">* </font> </td>
+<td height="22" width="444"><font color="#000066"><select size="1" NAME="terms">
+<option value="NEIN" selected></option>
+<option value="JA">Ich stimme den Vertragsbedingungen zu</option>
+<option value="NEIN">Nein, ich stimme den Vertragsbedingungen nicht zu</option>
+</select></font></td>
+</tr>
+
+<tr>
+<td colspan="3" height="38" width="714"><font color="#000066"><br></font><b>
+<font size="2" color="#000066">Ich habe die </font><font size="2">
+<a href="downloads_Verein/Satzung%20BU%20MG-Kempen.pdf">
+<font color="#000066">Satzung</font></a></font><font size="2" color="#000066"> des Vereins gelesen und stimme 
+dieser zu.</font></b></td>
+</tr>
+
+<tr>
+<td colspan="3" height="19" width="714">&nbsp;</td>
+</tr>
+<tr>
+
+<td colspan="2" height="27" width="263">
+<p align="center">
+&nbsp;</td>
+<td height="27" width="444"><font color="#000066"><input type="submit" value=" Antrag senden">&nbsp;</font><font color="#000066"><input type="reset" value=" reset"></font></td>
+</tr>
+
+</table>
+</form>
+<script language="JavaScript">
+function click()
+{if (event.button==2)
+{alert('Ich bitte um die Beachtung der Copyrights')}}
+document.onmousedown=click
+</script>
+<p>
+
+<font color="#FFFFFF">©</font><br><br></p>

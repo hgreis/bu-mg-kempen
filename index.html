@@ -1,31 +1,108 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Billardunion M.Gladbach-Kempen e.V.</title>
+  <title>Billardunion Mönchengladbach-Kempen</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    .text-left{
+        padding: 30px;
+    }
 
-	<meta name="Keywords" content="Poolbillard, Rheydt, HaKi ">
-	<meta name="Description" content="Willkommen auf unserer Homepage">
 
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      height: 100%;
+    }
+    
 
-	<LINK REL="SHORTCUT ICON" HREF="neun.ico">
-
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
 </head>
+<body style="background-color: #2E84C6; color: black">
 
-<frameset border="0" framespacing="0" frameborder="NO" cols="*"> 
-<frameset rows="191" border="0" framespacing="0" frameborder="NO"> 
-  	
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Start</a></li>
+        <li><a href="verein.html">Verein</a></li>
+        <li><a href="turniere.html">Turniere</a></li>
+        <li><a href="termine.html">Termine</a></li>
+        <li><a href="bilder.html">Bilder</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
+<img height="251" src="images/Hauptseite.jpg" width="100%">
+<h1 style="text-align: center">Billardunion Mönchengladbach-Kempen <nobr>im Billardcafe Nirvana</nobr> </h1>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-10 text-left"> 
+        <div style="text-align: center">
+            <h2>Das aktuelle Werbe-Plakat ist fertig</h2>
+            <img width="60%" align="center" src="images/Werbeplakat_2018-19.png" vspace="10px">
+            <p>An dieser Stelle noch einmal ein herzliches Dankeschön an alle Unterstützer...</p>
+            <hr>        
+        </div>
+        <div style="text-align: center">
+            <h2>Damen Grand-Prix in Düsseldorf am 27.02.2018</h2>
+            <img width="60%" align="center" src="images/IMG381.jpg">
+            <a href="http://portal.billardarea.de/" target="_blank"style="color: white">
+                <br>Quelle: http://portal.billardarea.de</a>
+            <p style="text-align: left">Chantal Manske belegt den 2. Platz. "In einem hochklassigen Damenfinale standen sich die beiden Finalistinnen Veronika Ivanovskaia und Chantal Manske in nichts nach. Den anwesenden Zuschauern boten die beiden spannende Unterhaltung. Beim 6-6 war es dann die Berlinerin, die die entscheidende Partie vom Anstoß weg zu ihren Gunsten entschied und ein teilweise dramatisches und sehr abwechslungsreiches Match mit 7-6 gewann."</p>
+            <a href="http://sbv.billardarea.de/cms_magazine/show/5375" target="_blank" style="color: white">
+                Hier könnt Ihr den ganzen Artikel lesen</a>
+            <hr>        
+        </div>
 
-	    <frameset cols="178,*">
-          <frame name="leftFrame" src="links.html" target="mainFrame" scrolling="auto">
-          <frame name="mainFrame" src="01-start/hauptseite.html" scrolling="auto" target="_self">
-        </frameset>
+    </div>
+    <div class="col-sm-2 sidenav">
+         <iframe src="partners.html" height="1000" style="border: none" width="100%"></iframe>       
+    </div>
+  </div>
+</div>
 
-	
-</frameset>  
-</frameset>
+<footer class="container-fluid text-center">
+  <a href="impressum.html">Impressum</a>
+</footer>
 
-<body>
 </body>
-
 </html>
